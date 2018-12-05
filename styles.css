@@ -1,0 +1,33 @@
+* {
+  font-family: Open Sans, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* game board */
+.game-board {
+  display: flex;
+  padding: 10px 25px;
+  }
+
+ul {
+  list-style-type: none;
+  width: 90%;
+  margin: auto;
+}
+
+li {
+  border: 1px solid black;
+  height: 100px;
+  text-align: center;
+}
+
+.player-podiums {
+  display: flex;
+}
+
+.player-one-podium, 
+.player-two-podium, 
+.player-three-podium {
+  padding: 15px;
+}
