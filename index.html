@@ -7,15 +7,15 @@
 </head>
 <body>
     <!-- opening page for 3 players to sign up -->
-<!--     <div class="">
+    <div class="login-page js-login-page">
       <h1>BRAIN SUGAR</h1>
-      <div class="">
-          <input class="" type="text" placeholder="Player One">
-          <input class="" type="text" placeholder="Player Two">
-          <input class="" type="text" placeholder="Player Three">
-          <button class="">Start</button>
-      </div>
-    </div> -->
+      <form class="player-form">
+          <input class="p1-name-input js-p1-name-input" type="text" placeholder="Player One">
+          <input class="p2-name-input js-p2-name-input" type="text" placeholder="Player Two">
+          <input class="p3-name-input js-p3-name-input" type="text" placeholder="Player Three">
+          <button class="start-button js-start-button">Start</button>
+      </form>
+    </div>
 
 
     <!-- card pop up -->
@@ -74,22 +74,30 @@
       <div class="player-podiums">
         <div class="player-one-podium">        
           <img src="">
-          <h3>Player One</h3>
+          <h3 class="p1-name-display">Player One</h3>
           <h4>Score: <span class="">0</span></h4>
         </div>
 
         <div class="player-two-podium">        
           <img src="">
-          <h3>Player Two</h3>
+          <h3 class="p2-name-display">Player Two</h3>
           <h4>Score: <span class="">0</span></h4>
         </div>
 
         <div class="player-three-podium">        
           <img src="">
-          <h3>Player Three</h3>
+          <h3 class="p3-name-display">Player Three</h3>
           <h4>Score: <span class="">0</span></h4>
         </div> 
       </div>
     </main>
+  <script type="text/javascript" src="jeopardy-dataset.js"></script>
+  <script type="text/javascript" src="domUpdates.js"></script>
+  <script type="text/javascript" src="game.js"></script>
+  <script type="text/javascript" src="rounds.js"></script>
+  <script type="text/javascript" src="player.js"></script>
+  <script type="text/javascript" src="clue.js"></script>
+  <script type="text/javascript" src="dailyDouble.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

@@ -1,8 +1,9 @@
 // this should only include code for event listeners/handlers.
 
 const playerNames = document.querySelector('inputs')
-const myAwesomeGame = new Game( this will querySelect the input fields for players names ) //index.js
-const myAwesomeGame.createNewGame(['matt', 'filbert'])
+const myAwesomeGame = new Game() //this will querySelect the input fields for players names ) //index.js
+// const myAwesomeGame.createNewGame(['matt', 'filbert'])
+
 
 // on click of submit button on login page, 
   // new Game(playerNames)
