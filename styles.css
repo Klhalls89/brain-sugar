@@ -1,3 +1,8 @@
+/* Lavender color #c6abdf */
+/* Magenta color #cf3482 */
+/* Navy color #081e36 */
+
+
 * {
   font-family: Open Sans, sans-serif;
   margin: 0px;
@@ -20,6 +25,7 @@ li {
   border: 1px solid black;
   height: 100px;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .player-podiums {
