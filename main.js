@@ -16,7 +16,7 @@ startButton.addEventListener('click', function(e) {
 
   domUpdates.updatePlayerNames(playersArray);
 
-  // game.createNewRound();
+  game.createNewRound();
 })
 
 console.log(Object.keys(data))

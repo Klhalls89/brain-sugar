@@ -12,9 +12,9 @@ let domUpdates = {
     playerThreeNameDisplay.innerText = playArr[2];
   },
 
-  // updateScore: function() will go update text on dom 
-  // createYourTurnBorder: function() 
-  // displayCard: function() {
+  // updateScore() will go update text on dom 
+  // createYourTurnBorder()
+  // displayCard() {
   //   new Clue 
   // }
   // assignCategories:
