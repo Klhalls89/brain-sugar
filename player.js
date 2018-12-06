@@ -1,13 +1,14 @@
 class Player {
- constructor(playerName, score) {
+ constructor(playerName) {
    this.playerName = playerName;
-   this.score = score;
-   this.isTurn = false; //changes
+   this.score = 0;
+   this.isTurn = false;
  }
- updateScore(points) { // this parameter can be positive or negative 
+
+ updateScore(points) { 
   // take the points from clue
   // this.score += 100 
   // domUpdates.displayScore(this.score);
-
  }
-}
+
+};

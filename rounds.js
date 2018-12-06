@@ -1,12 +1,11 @@
 class Round {
   constructor() {
-    this.round = 1;
     this.categories = [];
     this.clues = []; 
   }
 
   createCategories() {
-    // array proto
+    let categoriesArray = Object.keys(data.categories)
   }
 
   createClues() {
@@ -16,4 +15,4 @@ class Round {
   updateRound() {
     this.round++
   }
-}
+};

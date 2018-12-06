@@ -8,4 +8,4 @@ class Clue {
   submitPlayerGuess() {
     // updates players points, checks to see if it needs to instantiate a new Round (based on clues.length)
   }
-}
+};
