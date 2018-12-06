@@ -6,10 +6,10 @@ let playerThreeNameDisplay = document.querySelector('.p3-name-display');
 
 
 let domUpdates = {
-  updatePlayerNames(playerOne, playerTwo, playerThree) {
-    playerOne = playerOneNameDisplay.innerText;
-    playerTwoNameDisplay.innerText = playerTwo;
-    playerThreeNameDisplay.innerText = playerThree;
+  updatePlayerNames(playArr) {
+    playerOneNameDisplay.innerText = playArr[0];
+    playerTwoNameDisplay.innerText = playArr[1];
+    playerThreeNameDisplay.innerText = playArr[2];
   },
 
   // updateScore: function() will go update text on dom 
