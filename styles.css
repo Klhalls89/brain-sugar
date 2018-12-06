@@ -10,10 +10,10 @@
   padding: 10px 25px;
   }
 
-ul {
+.category {
   list-style-type: none;
-  width: 90%;
   margin: auto;
+  width: 25%;
 }
 
 li {
