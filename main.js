@@ -1,8 +1,9 @@
 // this should only include code for event listeners/handlers.
 
-let startButton = document.querySelector('.js-start-button');
+let startButton = $('.js-start-button');
+$('.main-page').hide(0);
 
-startButton.addEventListener('click', function(e) {
+startButton.on('click', function(e) {
   e.preventDefault();
   let playersArray = [
     document.querySelector('.js-p1-name-input').value, 
@@ -17,7 +18,11 @@ startButton.addEventListener('click', function(e) {
   domUpdates.updatePlayerNames(playersArray);
 
   game.createNewRound();
-})
+
+  $('.js-login-page').hide();
+  $('.main-page').show();
+
+});
 
 console.log(Object.keys(data))
 console.log(Object.keys(data.categories))
@@ -30,6 +35,9 @@ let firstQ = Object.values(data.clues[0])
 console.log(firstQ[0])
 // let cluesArray = Object.keys(data.clues)
 // console.log(Object.keys(cluesArray[0]))
+
+
+
 
 
 // converting camelCase category names to spaces: 
