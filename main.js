@@ -1,14 +1,28 @@
 // this should only include code for event listeners/handlers.
 
-const playerNames = document.querySelector('inputs')
-const myAwesomeGame = new Game() //this will querySelect the input fields for players names ) //index.js
-// const myAwesomeGame.createNewGame(['matt', 'filbert'])
+let startButton = document.querySelector('.js-start-button');
 
+startButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  let playersArray = [document.querySelector('.js-p1-name-input').value, document.querySelector('.js-p2-name-input').value, document.querySelector('.js-p3-name-input').value]
 
-// on click of submit button on login page, 
-  // new Game(playerNames)
-  // new Round()
+  let game = new Game(playersArray); 
+  
+  console.log(game)
+  console.log(playersArray)
 
+  game.createNewRound();
+
+  let test = playersArray[0].isTurn = true;
+  console.log(test)
+
+})
+
+// console.log(Object.keys(data))
+// console.log(Object.keys(data.categories))
+// console.log(Object.keys(data.clues))
+// let cluesArray = Object.keys(data.clues)
+// console.log(Object.keys(cluesArray[0]))
 
 
 // converting camelCase category names to spaces: 

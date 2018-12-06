@@ -18,6 +18,8 @@ const data = {
     'americanCities': 8,
     'food': 9,
     'cableTV': 10
+  // Object.keys()
+  // 
   },
   clues: [
     {
@@ -705,4 +707,8 @@ const data = {
       categoryId: 1
     }
   ]
+};
+
+if (typeof module !== 'undefined') {
+  module.exports = data;
 };

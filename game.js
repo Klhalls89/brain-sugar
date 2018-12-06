@@ -1,23 +1,19 @@
-// order will matter with how we link these in HTML (index last, domUpdates first)
-// make sure game isn't doing too muc
 class Game {
- constructor(playerNames) {
-    this.players = [];
+ constructor(playersArray) {
+    this.round = 1;
+    this.players = [new Player(playersArray[0]), new Player(playersArray[1]), new Player(playersArray[2])];
+  }
+
+  createPlayers() {
   }
   
-  createNewRound(playerNames) {
-    this.players = [new Player(playerNames[0]), new Player(playerNames[1]), new Player(playerNames[2])],
-    new Round();
+  createNewRound() {
+    let round = new Round();
+    // round.createCategories, round.createClues
+    // domUpdates.assignCategories
   }
 
   endRound() {
-
   }
 
-
-
-
-}
-// potential methods: startGame(), endGame(), 
- // check clues array length and if it's zero, increment this.round++ 
-  
+};
