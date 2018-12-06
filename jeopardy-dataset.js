@@ -18,8 +18,6 @@ const data = {
     'americanCities': 8,
     'food': 9,
     'cableTV': 10
-  // Object.keys()
-  // 
   },
   clues: [
     {

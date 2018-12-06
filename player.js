@@ -2,7 +2,7 @@ class Player {
  constructor(playerName) {
    this.playerName = playerName;
    this.score = 0;
-   this.isTurn = false; // changes
+   this.isTurn = false;
  }
 
  updateScore(points) { 
@@ -10,5 +10,5 @@ class Player {
   // this.score += 100 
   // domUpdates.displayScore(this.score);
  }
- 
+
 };
