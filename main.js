@@ -7,7 +7,8 @@ let gameBoard = $('.game-board')
 gameBoard.on('click', function(){
   let clue = new Clue()
   clue.createCard(10, 100)
-})
+  domUpdates.createCard(clue)
+});
 
 startButton.on('click', function(e) {
   e.preventDefault();
@@ -18,8 +19,8 @@ startButton.on('click', function(e) {
   ]
   let game = new Game(playersArray); 
 
-  console.log({game})
-  console.log({playersArray})
+  // console.log({game})
+  // console.log({playersArray})
 
   domUpdates.updatePlayerNames(playersArray);
   

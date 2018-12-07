@@ -19,6 +19,7 @@ class Round {
       this.categories.push({category: categoriesArray[categoryIndex], ID: data.categories[categoriesArray[categoryIndex]] })
       categoriesArray.splice(categoryIndex, 1)
     }
+    
     domUpdates.updateCategories(this.categories);
 
     console.log(this.categories)

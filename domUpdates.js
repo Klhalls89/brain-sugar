@@ -21,13 +21,14 @@ let domUpdates = {
     categoryTwo.innerText = categoryArray[1].category;
     categoryThree.innerText = categoryArray[2].category;
     categoryFour.innerText = categoryArray[3].category;
+  },
+
+  createCard(currentClue) {
+    document.querySelector('.js-card-popup').style.zIndex = '1';
   }
-
-
+};
   // updateScore() will go update text on dom 
   // createYourTurnBorder()
-  // displayCard() {
   //   new Clue 
   // }
   // assignCategories:
-};

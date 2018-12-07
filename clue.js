@@ -4,7 +4,7 @@ class Clue {
     this.pointValue = pointValue;
     this.answer = answer;
     this.categoryID = categoryID
- }
+ } 
 
  createCard(id, ptVal){
   data.clues.find((clue) => {

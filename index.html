@@ -22,24 +22,25 @@
 
 
     <!-- card pop up -->
-<!--     <div class="">
+    <article class="card-popup js-card-popup">
       <h2>"Question here..."</h2>
-      <input class="" type="text" placeholder="What is...">
+      <input class= type="text" placeholder="What is...">
       <button>Submit Guess</button>
-    </div> -->
+    </article>
 
 
     <!-- daily double popup ? -->
-<!--     <div>
+   <!--  <article class="double-popup js-double-popup">
       <h2>Daily Double!</h2>          
-      <input class="" type="text" placeholder="Enter Your Wager">
+      <input class= type="text" placeholder="Enter Your Wager">
       <button class="">Submit Wager</button>
-    </div> -->
+    </article> -->
 
 
     <!-- main Brain Sugar page -->
     <main class="main-page">
       <img class="gameboard-logo" src="assets/gameboardLogo.jpg">
+      <h2>Round 1</h2>
       
       <article class="game-board">
         <ul class="category">
@@ -72,27 +73,27 @@
         </ul>
       </article>
 
-      <h2>Round 1</h2>
 
-      <div class="player-podiums">
-        <div class="player-one-podium">        
-          <img src="">
-          <h3 class="p1-name-display">Player One</h3>
-          <h4>Score: <span class="">0</span></h4>
-        </div>
-
-        <div class="player-two-podium">        
-          <img src="">
-          <h3 class="p2-name-display">Player Two</h3>
-          <h4>Score: <span class="">0</span></h4>
-        </div>
-
-        <div class="player-three-podium">        
-          <img src="">
-          <h3 class="p3-name-display">Player Three</h3>
-          <h4>Score: <span class="">0</span></h4>
-        </div> 
-      </div>
+      <section class="player-podiums">
+        <article class="podium player-one-podium">  
+          <div class="podium-background">      
+            <h3 class="p1-name-display">Player One</h3>
+            <h4>Score: <span class="">0</span></h4>
+          </div>
+        </article>
+        <article  class="podium player-two-podium">   
+          <div class="podium-background">     
+            <h3 class="p2-name-display">Player Two</h3>
+            <h4>Score: <span class="">0</span></h4>
+          </div>
+        </article>
+        <article  class="podium player-three-podium">
+          <div class="podium-background">        
+            <h3 class="p3-name-display">Player Three</h3>
+            <h4>Score: <span class="">0</span></h4>
+          </div>
+        </article> 
+      </section>
     </main>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="jeopardy-dataset.js"></script>
