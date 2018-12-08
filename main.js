@@ -20,11 +20,11 @@ startButton.on('click', function(e) {
   ]
   console.log(playersArray)
   let game = new Game(playersArray); 
-  game.createNewRound();
+  let round = new Round();
   domUpdates.updatePlayerNames(playersArray);
   $('.js-login-page').hide();
   $('.main-page').show();
-
+  console.log(game)
 });
 
 

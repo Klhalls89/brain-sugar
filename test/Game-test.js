@@ -17,13 +17,16 @@ describe('Game', function() {
     game = new Game(playersArray);
   });
 
-  it('should have a players property that is an array with a length of three', function() {
+  it('should have a players property which is an array with a length of three', function() {
     expect(game.players).to.have.lengthOf(3);
-    // expect(game.players[0, 1 ,2].to.be.an.instanceOf(Player))
-  })
+  });
 
-  // it('should instatiate a new question object when ____ is called', function() {
-  //   game.makeQuestion();
-  //   expect(game.currentQuestion).to.equal()
-  // })
+  it('should have a round property which initially defaults to one', function() {
+    expect(game.round).to.equal(1);
+  });
+
+  it('should increment this.round when createNewRound is called', function() {
+    game.createNewRound();
+    expect(game.round).to.equal(2);
+  });
 });
