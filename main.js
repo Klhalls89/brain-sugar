@@ -1,9 +1,10 @@
 // this should only include code for event listeners/handlers.
 
 let startButton = $('.js-start-button');
+let gameBoard = $('.game-board');
+
 $('.main-page').hide();
 
-let gameBoard = $('.game-board')
 gameBoard.on('click', function(){
   let clue = new Clue()
   clue.createCard(10, 100)
@@ -18,18 +19,19 @@ startButton.on('click', function(e) {
     document.querySelector('.js-p3-name-input').value
   ]
   let game = new Game(playersArray); 
-
-  // console.log({game})
-  // console.log({playersArray})
-
-  domUpdates.updatePlayerNames(playersArray);
-  
   game.createNewRound();
-
+  domUpdates.updatePlayerNames(playersArray);
   $('.js-login-page').hide();
   $('.main-page').show();
 
 });
 
+
+
+
+
+
+
 // converting camelCase category names to spaces: 
-// https://stackoverflow.com/questions/7225407/convert-camelcasetext-to-sentence-case-text
+// https://stackoverflow.com/questions/7225407/
+// convert-camelcasetext-to-sentence-case-text
