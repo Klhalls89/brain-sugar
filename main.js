@@ -19,16 +19,13 @@ startButton.on('click', function(e) {
     new Player(document.querySelector('.js-p3-name-input').value).playerName
   ]
   console.log(playersArray)
-  let game = new Game(playersArray); 
+  let game = new Game(playersArray);
   let round = new Round();
   domUpdates.updatePlayerNames(playersArray);
   $('.js-login-page').hide();
   $('.main-page').show();
   console.log(game)
 });
-
-
-
 
 
 
