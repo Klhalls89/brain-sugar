@@ -14,10 +14,11 @@ gameBoard.on('click', function(){
 startButton.on('click', function(e) {
   e.preventDefault();
   let playersArray = [
-    document.querySelector('.js-p1-name-input').value, 
-    document.querySelector('.js-p2-name-input').value, 
-    document.querySelector('.js-p3-name-input').value
+    new Player(document.querySelector('.js-p1-name-input').value).playerName, 
+    new Player(document.querySelector('.js-p2-name-input').value).playerName, 
+    new Player(document.querySelector('.js-p3-name-input').value).playerName
   ]
+  console.log(playersArray)
   let game = new Game(playersArray); 
   game.createNewRound();
   domUpdates.updatePlayerNames(playersArray);
