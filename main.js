@@ -1,15 +1,25 @@
 // this should only include code for event listeners/handlers.
 
 let startButton = $('.js-start-button');
-let gameBoard = $('.game-board');
+
 
 $('.main-page').hide();
 
-gameBoard.on('click', function(){
+$('.category').on('click', function(e){
   let clue = new Clue()
-  clue.createCard(10, 100)
-  domUpdates.createCard(clue)
+  let category = $(e.target).siblings('.categories').attr('id');
+  let cat = category.toLowerCase();
+  console.log('category', cat)
+  let pointValue = parseInt($(event.target).text());
+  const foundClue = clue.createCard(cat, pointValue)
+  domUpdates.createCard(foundClue)
 });
+
+// $('.categories').on('click', (e) => {
+//   let category = $(e.target).siblings('.category-cards').text();
+//   let pointValue = parseInt($(event.target).text());
+//   game.matchQuestion(category, pointValue);
+// });
 
 startButton.on('click', function(e) {
   e.preventDefault();
