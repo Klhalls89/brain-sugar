@@ -165,6 +165,7 @@ h4 {
   padding: 50px;
   border-radius: 10px;
   position: absolute;
+  width: 500px;
   z-index: -1;
-  top: 40%;
-  left: 40%;
+  top: 30%;
+  left: 34%;
