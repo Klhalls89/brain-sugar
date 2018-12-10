@@ -3,14 +3,12 @@
 $('.main-page').hide();
 
 $('.category').on('click', function(e){
-  let category = $(e.target).siblings('.categories').attr('id');
-  let cat = category.toLowerCase();
-  console.log('category', cat)
+  let category = $(e.target).siblings('.categories').attr('id').toLowerCase()
   let pointValue = parseInt($(event.target).text());
   let clue = new Clue()
-  const foundClue = clue.findMatchingCard(cat, pointValue);
-  console.log('foundClue main', foundClue)
-  console.log(clue)
+  const foundClue = clue.findMatchingCard(category, pointValue);
+
+  
   domUpdates.createCard(foundClue);
 });
 
