@@ -24,6 +24,9 @@ function startGame(e) {
     new Player(document.querySelector('.js-p2-name-input').value).playerName, 
     new Player(document.querySelector('.js-p3-name-input').value).playerName
   ]
+  playersArray[0].isTurn = true;
+  console.log(playersArray)
+
   let game = new Game(playersArray);
   domUpdates.updatePlayerNames(playersArray);
   $('.js-login-page').hide();
