@@ -12,7 +12,8 @@ function generatePopupCard(e) {
   let currentClue = new Clue(foundClue.question, foundClue.pointValue, foundClue.answer, foundClue.categoryID)
 
   $('.js-submit-guess-btn').on('click', function(){
-    currentClue.comparePlayerGuess()
+    currentClue.comparePlayerGuess();
+    // update player turn 
   })
 };
 
@@ -20,9 +21,9 @@ function startGame(e) {
   e.preventDefault();
   let round = new Round();
   let playersArray = [
-    new Player(document.querySelector('.js-p1-name-input').value).playerName, 
-    new Player(document.querySelector('.js-p2-name-input').value).playerName, 
-    new Player(document.querySelector('.js-p3-name-input').value).playerName
+    new Player(document.querySelector('.js-p1-name-input').value), 
+    new Player(document.querySelector('.js-p2-name-input').value), 
+    new Player(document.querySelector('.js-p3-name-input').value)
   ]
   playersArray[0].isTurn = true;
   console.log(playersArray)
