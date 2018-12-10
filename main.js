@@ -2,15 +2,18 @@
 
 $('.main-page').hide();
 $('.category').on('click', generatePopupCard)
-$('.js-submit-guess-btn').on('click', submitPlayerGuess)
 $('.js-start-button').on('click', startGame)
 
 function generatePopupCard(e) {
   let category = $(e.target).siblings('.categories').attr('id').toLowerCase()
   let pointValue = parseInt($(event.target).text());
-  let clue = new Clue()
-  const foundClue = clue.findMatchingCard(category, pointValue);
+  let foundClue = findMatchingClue(category, pointValue)
   domUpdates.createCard(foundClue);
+  let currentClue = new Clue(foundClue.question, foundClue.pointValue, foundClue.answer, foundClue.categoryID)
+
+  $('.js-submit-guess-btn').on('click', function(){
+    currentClue.comparePlayerGuess()
+  })
 };
 
 function startGame(e) {
@@ -27,7 +30,11 @@ function startGame(e) {
   $('.main-page').show();
 };
 
-function submitPlayerGuess() {
-  let clue = new Clue();
-  clue.comparePlayerGuess(clue.categoryID);
-};
+ function findMatchingClue(cat, ptVal) {
+  return data.clues.find((clue) => {
+    if(clue.categoryId == cat && clue.pointValue == ptVal) {
+      return clue;
+      }
+      this.categoryID = clue;
+    })
+  }
