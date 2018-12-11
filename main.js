@@ -15,8 +15,7 @@ $('.js-submit-guess-btn').on('click', checkAnswer)
 function checkAnswer(){
   game.comparePlayerGuess(currentClue);
   round.removeClue(currentClue);
-  // 
-  // check round.clues.length === 0 then start new round and increment game.round
+  round.checkCluesArray(game);
 };
 
 function generatePopupCard(e) {
@@ -41,6 +40,6 @@ function startGame(e) {
     if(clue.categoryId == cat && clue.pointValue == ptVal) {
       return clue;
       }
-      this.categoryID = clue;
+      this.categoryId = clue;
     })
   }
