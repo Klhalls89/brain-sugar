@@ -20,11 +20,8 @@ function generatePopupCard(e) {
   let pointValue = parseInt($(event.target).text());
   let foundClue = findMatchingClue(category, pointValue);
   domUpdates.createCard(foundClue);
-  currentClue = new Clue(
-    foundClue.question, 
-    foundClue.pointValue, 
-    foundClue.answer, 
-    foundClue.categoryID);
+  currentClue = new Clue(foundClue.question, foundClue.pointValue, foundClue.answer, foundClue.categoryID);
+  domUpdates.disableSquare(e.target);
 };
 
 function startGame(e) {
