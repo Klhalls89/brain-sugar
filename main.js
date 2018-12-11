@@ -5,6 +5,7 @@ let playersArray = [
 ];
 let game = new Game(playersArray);
 let currentClue;
+let round;
 
 $('.main-page').hide();
 $('.category').on('click', generatePopupCard)
@@ -21,13 +22,13 @@ function generatePopupCard(e) {
   let foundClue = findMatchingClue(category, pointValue);
   domUpdates.createCard(foundClue);
   currentClue = new Clue(foundClue.question, foundClue.pointValue, foundClue.answer, foundClue.categoryID);
-  domUpdates.disableSquare(e.target);
+  domUpdates.disableSquare(e.target, round);
+
 };
 
 function startGame(e) {
   e.preventDefault();
-  let round = new Round();
-  // playersArray[0].isTurn = true;
+  round = new Round();
   domUpdates.updatePlayerNames(playersArray);
   $('.js-login-page').hide();
   $('.main-page').show();
