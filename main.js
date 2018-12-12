@@ -1,8 +1,4 @@
-let players = [
-  new Player(document.querySelector('.js-p1-name-input').value), 
-  new Player(document.querySelector('.js-p2-name-input').value), 
-  new Player(document.querySelector('.js-p3-name-input').value)
-];
+let players = domUpdates.getPlayerNames();
 let game = new Game(players);
 let currentClue;
 let round;
@@ -14,7 +10,7 @@ $('.js-submit-guess-btn').on('click', submitAnswer);
 $('.js-submit-wager-btn').on('click', updatePoints);
 
 
-function submitAnswer(){
+function submitAnswer() {
   console.log(round.clues)
   game.comparePlayerGuess(currentClue);
   round.removeClue(currentClue);
