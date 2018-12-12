@@ -187,27 +187,34 @@ h4 {
 /* daily double card */
 
 .js-daily-double-popup {
+  border: 10px solid black;
   background-color: #c6abdf;
   padding: 50px;
   border-radius: 10px;
   position: absolute;
-  width: 500px;
-  top: 30%;
-  left: 34%;
+  width: 825px;
+  height: 395px;
+  top: 19%;
+  left: 13%;
   z-index: -1;
 }
 
+.daily-double-title {
+  text-align: center;
+}
 
 /* clue card */
 
 .card-popup {
+  border: 10px solid black;
   background-color: #fff;
   padding: 50px;
   border-radius: 10px;
   position: absolute;
-  width: 500px;
-  top: 30%;
-  left: 34%;
+  width: 825px;
+  height: 395px;
+  top: 19%;
+  left: 13%;
   z-index: -1;
 }
 

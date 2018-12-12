@@ -15,7 +15,7 @@ $('.js-submit-wager-btn').on('click', updatePoints);
 
 
 function submitAnswer(){
-  console.log(currentClue)
+  console.log(round.clues)
   game.comparePlayerGuess(currentClue);
   round.removeClue(currentClue);
   round.checkCluesArray(game);
@@ -26,10 +26,10 @@ function generatePopupCard(e) {
   let category = $(e.target).siblings('.categories').attr('id').toLowerCase();
   let pointValue = parseInt($(event.target).text());
   let foundClue = findMatchingClue(category, pointValue);
-  if (foundClue instanceof DailyDouble) {
-    domUpdates.createDailyDoubleCard(foundClue)
-  }
   domUpdates.createCard(foundClue);
+    if (foundClue instanceof DailyDouble) {
+      domUpdates.createDailyDoubleCard(foundClue)
+    }
   currentClue = new Clue(foundClue.question, foundClue.pointValue, foundClue.answer, foundClue.categoryId);
   domUpdates.disableSquare(e.target, round);
 };
