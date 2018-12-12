@@ -140,11 +140,13 @@ h4 {
 }
 
 .podium-background {
+  border: 8px #c6abdf solid;
   background-color: #c6abdf;
   margin-top: 85px;
   padding: 10px;
   border-radius: 25px 25px 4px 4px;
   background-image: linear-gradient(#c6abdf, #614976);
+  border-bottom: none;
 }
 
 .player-one-podium {
@@ -180,6 +182,11 @@ h4 {
   top: 30%;
   left: 34%;
   z-index: -1;
+}
+
+.podium-border {
+  border: 8px yellow solid;
+  border-bottom: 0px; 
 }
 
 
