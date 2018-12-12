@@ -2,7 +2,6 @@
 /* Magenta color #cf3482 */
 /* Navy color #081e36 */
 
-
 * {
   font-family: Open Sans, sans-serif;
   margin: 0px;
@@ -22,13 +21,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 250px 0px;
+  margin: 200px 0px;
 }
 
 .main-logo {
   height: 300px;
-  width: 550px
-  
+  width: 550px;
 }
 
 .player-form {
@@ -82,7 +80,7 @@
 .category-3,
 .category-4 {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 500;
   
 }
 

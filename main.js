@@ -8,16 +8,17 @@ let currentClue;
 let round;
 
 $('.main-page').hide();
-$('.category').on('click', generatePopupCard)
-$('.js-start-button').on('click', startGame)
-$('.js-submit-guess-btn').on('click', checkAnswer)
-$('.js-submit-wager-btn').on('click', updatePoints)
+$('.category').on('click', generatePopupCard);
+$('.js-start-button').on('click', startGame);
+$('.js-submit-guess-btn').on('click', submitAnswer);
+$('.js-submit-wager-btn').on('click', updatePoints);
 
 
-function checkAnswer(){
+function submitAnswer(){
   game.comparePlayerGuess(currentClue);
   round.removeClue(currentClue);
   round.checkCluesArray(game);
+  game.updatePlayerTurn();
 };
 
 function generatePopupCard(e) {
@@ -30,13 +31,16 @@ function generatePopupCard(e) {
   domUpdates.createCard(foundClue);
   currentClue = new Clue(foundClue.question, foundClue.pointValue, foundClue.answer, foundClue.categoryId);
   domUpdates.disableSquare(e.target, round);
-
 };
 
 function updatePoints() {
-  currentClue.pointValue = $('.js-wager-input').val();
-  $('.js-daily-double-popup').hide()
-}
+  let dailyDouble = new DailyDouble();
+  let userWager = $('.js-wager-input').val();
+  if (dailyDouble.validateWager(userWager) === 'valid wager') {
+    $('.js-daily-double-popup').hide()
+    currentClue.pointValue = userWager;
+  }
+};
 
 function startGame(e) {
   e.preventDefault();
@@ -46,11 +50,11 @@ function startGame(e) {
   $('.main-page').show();
 };
 
- function findMatchingClue(cat, ptVal) {
+function findMatchingClue(cat, ptVal) {
   return round.clues.find((clue) => {
     if(clue.categoryId == cat && clue.pointValue == ptVal) {
       return clue;
-      }
-      this.categoryId = clue;
-    })
-  }
+    }
+    this.categoryId = clue;
+  })
+};
