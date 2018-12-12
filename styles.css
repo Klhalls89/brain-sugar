@@ -59,9 +59,10 @@
 }
 
 .round {
-  font-weight: 600;
-  font-size: 22px;
+  font-weight: 800;
+  font-size: 24px;
   color: #081e36;
+  letter-spacing: 2px;
 }
 
 .game-board {
@@ -81,7 +82,7 @@
 .category-4 {
   font-size: 1.25rem;
   font-weight: 500;
-  
+  letter-spacing: 1px;
 }
 
 .category-1 {
@@ -112,16 +113,33 @@ li {
   color: #c6abdf;
 }
 
+.scores {
+  background-color: #0c2743;
+  font-weight: 600;
+  letter-spacing: 6px;
+}
+
+.scores:hover {
+  color: #cf3482;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* player podiums */
+
 h3 {
   font-family: 'Caveat', cursive;
   color: #081e36;
+  font-size: 32px;
   text-align: center;
 }
 
 h4 {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 18px;
   color: #081e36;
   text-align: center;
+  letter-spacing: 1.5px;
 }
 
 .player-podiums {
@@ -160,6 +178,8 @@ h4 {
   background-image: url(assets/lollipop3.jpg);
 }
 
+/* daily double card */
+
 .js-daily-double-popup {
   background-color: #c6abdf;
   padding: 50px;
@@ -170,6 +190,9 @@ h4 {
   left: 34%;
   z-index: -1;
 }
+
+
+/* clue card */
 
 .card-popup {
   background-color: #fff;
