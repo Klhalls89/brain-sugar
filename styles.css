@@ -160,12 +160,27 @@ h4 {
   background-image: url(assets/lollipop3.jpg);
 }
 
+.js-daily-double-popup {
+  background-color: #c6abdf;
+  padding: 50px;
+  border-radius: 10px;
+  position: absolute;
+  width: 500px;
+  top: 30%;
+  left: 34%;
+  z-index: -1;
+}
+
 .card-popup {
   background-color: #fff;
   padding: 50px;
   border-radius: 10px;
   position: absolute;
   width: 500px;
-  z-index: -1;
   top: 30%;
   left: 34%;
+  z-index: -1;
+}
+
+
+
