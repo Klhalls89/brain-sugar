@@ -11,7 +11,6 @@ $('.js-submit-wager-btn').on('click', updatePoints);
 
 
 function submitAnswer() {
-  console.log(round.clues)
   game.comparePlayerGuess(currentClue);
   round.removeClue(currentClue);
   round.checkCluesArray(game);
@@ -35,7 +34,6 @@ function updatePoints() {
   let userWager = $('.js-wager-input').val();
   if (dailyDouble.validateWager(userWager) === 'valid wager') {
     currentClue.pointValue = parseInt(userWager);
-    console.log('updatePoints fires')
     $('.js-daily-double-popup').hide()
   }
 };
