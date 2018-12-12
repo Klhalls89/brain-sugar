@@ -1,9 +1,9 @@
-let playersArray = [
+let players = [
   new Player(document.querySelector('.js-p1-name-input').value), 
   new Player(document.querySelector('.js-p2-name-input').value), 
   new Player(document.querySelector('.js-p3-name-input').value)
 ];
-let game = new Game(playersArray);
+let game = new Game(players);
 let currentClue;
 let round;
 
@@ -47,14 +47,17 @@ function updatePoints() {
 function startGame(e) {
   e.preventDefault();
   round = new Round();
-  domUpdates.updatePlayerNames(playersArray);
+  round.createCategories();
+  round.assignDailyDouble();
+  domUpdates.updatePlayerNames(players);
   $('.js-login-page').hide();
   $('.main-page').show();
+  // need domUpdates.startGame() which hides/shows these elements
 };
 
-function findMatchingClue(cat, ptVal) {
+function findMatchingClue(category, pointValue) {
   return round.clues.find((clue) => {
-    if(clue.categoryId == cat && clue.pointValue == ptVal) {
+    if(clue.categoryId == category && clue.pointValue == pointValue) {
       return clue;
     }
     this.categoryId = clue;

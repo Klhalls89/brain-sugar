@@ -19,5 +19,5 @@ To run tests:
 
 ## Contributors 
 
-⋅⋅* [Kristen Hallstrom](https://github.com/Klhalls89)
-⋅⋅* [Whitney Burton](https://github.com/whitneyburton)
+* [Kristen Hallstrom](https://github.com/Klhalls89)
+* [Whitney Burton](https://github.com/whitneyburton)

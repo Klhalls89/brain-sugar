@@ -7,6 +7,7 @@ const Game = require('../lib/game.js');
 global.domUpdates = require('../lib/domUpdates.js');
 global.Round = require('../lib/rounds.js');
 global.Player = require('../lib/player.js');
+chai.spy.on(global.domUpdates, ['highlightPodium'], () => true);
 
 
 describe('Game', function() {
@@ -25,8 +26,19 @@ describe('Game', function() {
     expect(game.round).to.equal(1);
   });
 
-  it('should increment this.round when createNewRound is called', function() {
+  it('should increment this.round when createNewRound is invoked', function() {
     game.createNewRound();
     expect(game.round).to.equal(2);
   });
+
+  it('should have a currentPlayer property which initially defaults to zero', function() {
+    expect(game.currentPlayer).to.equal(0);
+  });
+
+  it('should increment this.currentPlayer value when updatePlayerTurn is invoked', function() {
+    game.updatePlayerTurn()
+    expect(game.currentPlayer).to.equal(1);
+  });
+
+
 });
