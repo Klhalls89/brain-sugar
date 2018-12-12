@@ -11,6 +11,8 @@ $('.main-page').hide();
 $('.category').on('click', generatePopupCard)
 $('.js-start-button').on('click', startGame)
 $('.js-submit-guess-btn').on('click', checkAnswer)
+$('.js-submit-wager-btn').on('click', updatePoints)
+
 
 function checkAnswer(){
   game.comparePlayerGuess(currentClue);
@@ -22,10 +24,19 @@ function generatePopupCard(e) {
   let category = $(e.target).siblings('.categories').attr('id').toLowerCase();
   let pointValue = parseInt($(event.target).text());
   let foundClue = findMatchingClue(category, pointValue);
+  if (foundClue instanceof DailyDouble) {
+    domUpdates.createDailyDoubleCard(foundClue)
+  }
   domUpdates.createCard(foundClue);
   currentClue = new Clue(foundClue.question, foundClue.pointValue, foundClue.answer, foundClue.categoryId);
   domUpdates.disableSquare(e.target, round);
+
 };
+
+function updatePoints() {
+  currentClue.pointValue = $('.js-wager-input').val();
+  $('.js-daily-double-popup').hide()
+}
 
 function startGame(e) {
   e.preventDefault();
@@ -36,7 +47,7 @@ function startGame(e) {
 };
 
  function findMatchingClue(cat, ptVal) {
-  return data.clues.find((clue) => {
+  return round.clues.find((clue) => {
     if(clue.categoryId == cat && clue.pointValue == ptVal) {
       return clue;
       }
