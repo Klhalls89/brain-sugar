@@ -17,7 +17,7 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  padding: 20% 0%;
+  padding: 12% 0% 14% 0%;
 }
 
 .main-logo {
@@ -177,20 +177,26 @@ h4 {
 }
 
 /* daily double card */
-.js-daily-double-popup {
+.js-daily-double-popup,
+.card-popup {
   align-items: center;
-  background-color: #c6abdf;
+  background-color: #fff;
   border-radius: 10px;
   border: 10px solid #cf3482;
   display: flex;
   flex-direction: column;
   height: 173px;
-  left: 9%;
+  left: 50%;
+  margin-left:-481px;
   padding: 100px;
   position: absolute;
-  top: 28%;
+  top: 27%;
   width: 743px;
   z-index: -1;
+}
+
+.js-daily-double-popup{
+  background-color: #c6abdf;
 }
 
 .daily-double-title {
@@ -206,23 +212,7 @@ h4 {
   padding-bottom: 50px;
 }
 
-.card-popup {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 10px;
-  border: 10px solid #cf3482;
-  display: flex;
-  flex-direction: column;
-  height: 173px;
-  left: 9%;
-  padding: 100px;
-  position: absolute;
-  top: 28%;
-  width: 743px;
-  z-index: -1;
-}
 
 .podium-border {
   border: 8px #cf3482 solid;
-  border-bottom: 0px; 
 }
