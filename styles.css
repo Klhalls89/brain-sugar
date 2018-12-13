@@ -189,15 +189,15 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 10px solid black;
+  border: 10px solid #cf3482;
   background-color: #c6abdf;
-  padding: 50px;
+  padding: 100px;
   border-radius: 10px;
   position: absolute;
-  width: 825px;
-  height: 395px;
-  top: 19%;
-  left: 13%;
+  width: 743px;
+  height: 205px;
+  top: 28%;
+  left: 9%;
   z-index: -1;
 }
 
@@ -212,19 +212,23 @@ h4 {
 
 /* clue card */
 
+.pop-question {
+  padding-bottom: 50px;
+}
+
 .card-popup {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 10px solid black;
+  border: 10px solid #cf3482;
   background-color: #fff;
-  padding: 50px;
+  padding: 100px;
   border-radius: 10px;
   position: absolute;
-  width: 825px;
-  height: 395px;
-  top: 19%;
-  left: 13%;
+  width: 743px;
+  height: 205px;
+  top: 28%;
+  left: 9%;
   z-index: -1;
 }
 
