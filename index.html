@@ -5,10 +5,8 @@
   <title>Brain Sugar</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Caveat|Open+Sans:300,400,600,800" rel="stylesheet">
-
 </head>
 <body>
-    <!-- login page -->
     <div class="login-page js-login-page">
       <img class="main-logo" src="assets/brainSugar.jpg">
       <form class="player-form">
@@ -18,8 +16,6 @@
           <button class="buttons js-start-button">Let's Play!</button>
       </form>
     </div>
-
-    <!-- card pop up -->
     <article class="card-popup js-card-popup">
       <h2 class="pop-question">"Question here..."</h2>
       <section>
@@ -27,8 +23,6 @@
         <button class="buttons js-submit-guess-btn">Submit Guess</button>
       </section>
     </article>
-`
-    <!-- daily double popup ? -->
     <div class="popup-container">
       <article class="js-daily-double-popup daily-double-popup">
         <h2 class="daily-double-title">Daily Double!</h2>  
@@ -42,13 +36,9 @@
         <p class="invalid-wager"></p>
       </article>
     </div>
-
-
-    <!-- main Brain Sugar page -->
     <main class="main-page">
       <img class="gameboard-logo" src="assets/gameboardLogo.jpg">
       <h2 class="round">ROUND 1</h2>
-      
       <article class="game-board">
         <ul class="category ">
           <li class="categories category-1">Category 1</li>
@@ -79,8 +69,6 @@
           <li class="scores">400</li>
         </ul>
       </article>
-
-
       <section class="player-podiums">
         <article class="podium player-one-podium">  
           <div class="podium-background podium-border js-p1-podium">      
@@ -91,13 +79,13 @@
         <article  class="podium player-two-podium">   
           <div class="podium-background js-p2-podium">     
             <h3 class="p2-name-display">Player Two</h3>
-            <h4>SCORE: <span class="js-p2-score">0</span></h4>
+            <h4 class="js-p2-score">0</h4>
           </div>
         </article>
         <article  class="podium player-three-podium">
           <div class="podium-background js-p3-podium">        
             <h3 class="p3-name-display">Player Three</h3>
-            <h4>SCORE: <span class="js-p3-score">0</span></h4>
+            <h4 class="js-p3-score">0</h4>
           </div>
         </article> 
       </section>

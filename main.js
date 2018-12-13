@@ -21,11 +21,15 @@ function generatePopupCard(e) {
   let foundClue = findMatchingClue(category, pointValue);
   domUpdates.createCard(foundClue);
   if (foundClue instanceof DailyDouble) {
-    domUpdates.createDailyDoubleCard(foundClue)
+    domUpdates.createDailyDoubleCard()
   }
-  currentClue = new Clue(foundClue.question, foundClue.pointValue, foundClue.answer, foundClue.categoryId);
-  domUpdates.disableSquare(e.target, round);
-};
+  currentClue = new Clue(
+    foundClue.question, 
+    foundClue.pointValue, 
+    foundClue.answer, 
+    foundClue.categoryId);
+  domUpdates.disableSquare(e.target);
+}
 
 function updatePoints() {
   let dailyDouble = new DailyDouble();
@@ -33,8 +37,8 @@ function updatePoints() {
   if (dailyDouble.validateWager(userWager) === 'valid wager') {
     currentClue.pointValue = parseInt(userWager);
     $('.js-daily-double-popup').hide()
-  };
-};
+  }
+}
 
 function startGame(e) {
   e.preventDefault();
@@ -46,14 +50,13 @@ function startGame(e) {
   domUpdates.updatePlayerNames(players);
   $('.js-login-page').hide();
   $('.main-page').show();
-};
+}
 
 function findMatchingClue(category, pointValue) {
-  console.log('find matching clues', round.clues.length)
   return round.clues.find((clue) => {
     if (clue.categoryId == category && clue.pointValue == pointValue) {
       return clue;
     }
     this.categoryId = clue;
   });
-};
+}
