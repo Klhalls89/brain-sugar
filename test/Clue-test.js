@@ -3,6 +3,9 @@ const expect = chai.expect;
 const spies = require('chai-spies')
 chai.use(spies);
 const Clue = require('../lib/clue.js');
+global.domUpdates = require('../lib/domUpdates.js')
+
+chai.spy.on(global.domUpdates,['playerGuess'],() => true)
 
 
 describe('Clue', function() {
@@ -12,19 +15,16 @@ describe('Clue', function() {
     clue = new Clue('what?', 100, 'Bob Barker', 10);
   })
 
-  it('should have a property of question that is a string', function() {
+  it('should have the appropriate default properties', function() {
     expect(clue.question).to.be.a('string'); 
-  })
-
-  it('should have a property of pointValue that is a number', function() {
     expect(clue.pointValue).to.be.a('number'); 
-  })
-
-  it('should have a property of answere that is a string', function() {
     expect(clue.answer).to.be.a('string'); 
-  })
-
-  it('should have a property of categoryId that is a number', function() {
     expect(clue.categoryId).to.be.a('number');
   })
+
+  it('should return a string when validate answer is invoked', function(){
+    clue.validateAnswer();
+    expect('string')
+  })
+
 });
