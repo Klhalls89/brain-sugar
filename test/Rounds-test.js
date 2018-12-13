@@ -8,7 +8,6 @@ const Round = require('../lib/rounds.js');
 
 chai.spy.on(global.domUpdates, ['updateCategories'], () => true);
 
-
 describe('Round', function() {
   var round;
 
@@ -22,10 +21,14 @@ describe('Round', function() {
         categoryId: 10
         }],
       dailyDouble: null
-    }
+    };
 
   beforeEach(function() {
     round = new Round(roundProperties.categories, roundProperties.clues, roundProperties.dailyDouble);
+  });
+
+  afterEach(function() {
+    chai.spy.restore(global.domUpdates);
   });
 
   it('should have a categories property which is an empty array', function() {
@@ -34,15 +37,20 @@ describe('Round', function() {
     expect(round.dailyDouble).to.equal(null);
   });
 
-  it('should create a dailyDouble question when assignDailyDouble is invoked', function() {
+  it('should create a dailyDouble question when assignDailyDouble is called', function() {
     round.assignDailyDouble();
     expect(round.dailyDouble).is.instanceof(DailyDouble);
   });
 
-  // it('should generate a random number when generateRandomNumber is invoked', function() {
-    // round.generateRandomNumber(1, 16);
-
-    // expect().to.equal();
-  // });
+  it('should remove a clue from the clues array', function() {
+    let clue = {
+        question: "Scorecard Report\" & \"Peter Jacobsen Plugged In\" are seen on the sports channel devoted to this",
+        pointValue: 100,
+        answer: "golf",
+        categoryId: 10
+        };
+    round.removeClue(clue);
+    expect()
+  })
 
 });
