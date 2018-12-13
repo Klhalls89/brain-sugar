@@ -23,6 +23,7 @@ describe('DailyDouble', function() {
     }
 
   beforeEach(function() {
+    let round = new Round(roundProperties.categories, roundProperties.clues, roundProperties.dailyDouble);
     dailyDouble = new DailyDouble();
   });
 
@@ -31,7 +32,6 @@ describe('DailyDouble', function() {
   });
 
   it.skip('should validate the users wager', function() {
-    let round = new Round(roundProperties.categories, roundProperties.clues, roundProperties.dailyDouble);
     let test = dailyDouble.validateWager(6);
     expect(test).to.be.equal('valid wager');
   });

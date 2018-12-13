@@ -24,11 +24,6 @@ describe('Clue', function() {
     expect(clue.categoryId).to.be.a('number');
   })
 
-  it('should return a string when validate answer is invoked', function(){
-    clue.validateAnswer();
-    expect('string')
-  })
-
   it('should validate whether the player answer is correct', function() {
     let returnValue = clue.validateAnswer(clue);
     expect(returnValue).to.be.equal('incorrect');
