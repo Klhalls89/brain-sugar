@@ -27,7 +27,7 @@ https://klhalls89.github.io/brain-sugar/
 
 ## Reflection
 
-Game time was a mountain of a project for two students to do in approximately two weeks. Incorporating multiple classes on multiple javaScript files was a new challenge for us. It was difficult when a single function could would affect multiple other files in you scripts. Another hurdle was the introduction of testing, which we had never before had to implement in a project.  This was also our first project having to use a linter over our code. With all of these new obstacles we learned how to write an effective test, how to run eslint over a file and how multiple classes for one project works. I think we ended up with a really fun and functional game that is both pleasant to look at and intuitive. We would like to next implement round two and final round functionality. Here is a link to other issues we are working on:
+Brain Sugar was a great project to test our new skills in OOP and test-driven-development. Incorporating multiple classes on multiple JavaScript files was a new challenge for us. It was difficult when a single function would affect multiple other files in you scripts. Another hurdle was the introduction of testing, which we had never before had to implement in a project.  This was also our first project having to use a linter over our code. With all of these new obstacles we learned how to write an effective testing suite, how to run eslint over a file, and how to utilize object oriented programming. We ended up with a fun and functional game that is both pleasant to look at and intuitive. We would like to next implement round two and final round functionality. Here is a link to other issues we are working on:
 
 https://github.com/Klhalls89/brain-sugar/issues
 
