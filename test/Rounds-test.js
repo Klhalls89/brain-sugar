@@ -4,8 +4,8 @@ const spies = require('chai-spies')
 chai.use(spies);
 global.Clue = require('../lib/clue.js');
 global.DailyDouble = require('../lib/dailyDouble.js');
+global.data = require('../lib/jeopardy-dataset.js');
 const Round = require('../lib/rounds.js');
-
 chai.spy.on(global.domUpdates, ['updateCategories'], () => true);
 
 describe('Round', function() {
@@ -50,7 +50,19 @@ describe('Round', function() {
         categoryId: 10
         };
     round.removeClue(clue);
-    expect()
+    expect(round.clues).to.have.lengthOf(0);
+  });
+
+  it('should be able to generate a number given a min and max range', function() {
+    let min = 5;
+    let max = 45;
+    let num = round.generateRandomNumber(min, max);
+    expect(num).to.be.within(0, max);
+  });
+
+  it.skip('should be able to create a categories array', function() {
+    round.createCategories();
+    expect(round.categories).to.have.lengthOf(16);
   })
 
 });
