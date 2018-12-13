@@ -17,6 +17,8 @@ To run tests:
 
 ` npm test `
 
+## Comp
+
 <img width="853" alt="screen shot 2018-12-12 at 8 20 09 pm" src="https://user-images.githubusercontent.com/41968928/49913629-7db7cd00-fe4b-11e8-95a7-c522d4254892.png">
 
 ## Play Here
