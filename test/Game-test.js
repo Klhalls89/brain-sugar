@@ -28,30 +28,9 @@ describe('Game', function() {
     expect(game.currentPlayer).to.equal(0);
   });
 
-  it('should update players score on the board when updatePlayerScore is called', function() {
-    let clue = new Clue(
-      question = "Scorecard Report\" & \"Peter Jacobsen Plugged In\" are seen on the sports channel devoted to this",
-      pointValue = 100,
-      answer = "golf",
-      categoryId = 10
-    );
-    game.updateDisplayScore(clue);
-    expect(game.players[0].score).to.equal(100);
-  })
-
-  it('should reassign the players property to an array with the length of 3 when getPlayers is called', function() {
-    game.getPlayers();
-    expect(game.players).to.have.lengthOf(3);
-  })
-
   it('should increment this.currentPlayer value when updatePlayerTurn is called', function() {
     game.updatePlayerTurn()
     expect(game.currentPlayer).to.equal(1);
-  });
-
-  it('should increment this.round when createNewRound is called', function() {
-    game.createNewRound();
-    expect(game.round).to.equal(2);
   });
 
 });

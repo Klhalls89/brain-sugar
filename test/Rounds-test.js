@@ -10,21 +10,18 @@ chai.spy.on(global.domUpdates, ['updateCategories'], () => true);
 
 describe('Round', function() {
   var round;
-
-  let roundProperties =
-    {
-      categories: [],
+  var roundProperties 
+  beforeEach(function() {
+   roundProperties = {
       clues: [{
         question: "Scorecard Report\" & \"Peter Jacobsen Plugged In\" are seen on the sports channel devoted to this",
         pointValue: 100,
         answer: "golf",
         categoryId: 10
-        }],
-      dailyDouble: null
+        }]
     };
-
-  beforeEach(function() {
-    round = new Round(roundProperties.categories, roundProperties.clues, roundProperties.dailyDouble);
+    round = new Round();
+    round.clues = roundProperties.clues;
   });
 
   afterEach(function() {
@@ -60,7 +57,7 @@ describe('Round', function() {
     expect(num).to.be.within(0, max);
   });
 
-  it.skip('should be able to create a categories array', function() {
+  it('should be able to create a categories array', function() {
     round.createCategories();
     expect(round.categories).to.have.lengthOf(16);
   })
