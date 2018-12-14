@@ -19,7 +19,7 @@ function submitAnswer() {
 function generatePopupCard(e) {
   let category = $(e.target).siblings('.categories').attr('id').toLowerCase();
   let pointValue = parseInt($(event.target).text());
-  let foundClue = findMatchingClue(category, pointValue);
+  let foundClue = game.round.findMatchingClue(category, pointValue);
   domUpdates.createCard(foundClue);
   if (foundClue instanceof DailyDouble) {
     domUpdates.createDailyDoubleCard()
@@ -50,13 +50,4 @@ function startGame(e) {
   game.round.assignDailyDouble();
   $('.js-login-page').hide();
   $('.main-page').show();
-}
-
-function findMatchingClue(category, pointValue) {
-  return game.round.clues.find((clue) => {
-    if (clue.categoryId == category && clue.pointValue == pointValue) {
-      return clue;
-    }
-    this.categoryId = clue;
-  });
 }
