@@ -59,7 +59,7 @@ describe('Round', function() {
 
   it('should be able to create a categories array', function() {
     round.createCategories();
-    expect(round.categories).to.have.lengthOf(16);
+    expect(round.categories).to.have.lengthOf(4);
   })
 
 });
