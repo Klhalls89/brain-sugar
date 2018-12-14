@@ -35,7 +35,7 @@ function generatePopupCard(e) {
 function updateWagerPoints() {
   let dailyDouble = new DailyDouble();
   let userWager = $('.js-wager-input').val();
-  if (dailyDouble.validateWager(userWager) === 'valid wager') {
+  if (dailyDouble.validateWager(userWager, game) === 'valid wager') {
     currentClue.pointValue = parseInt(userWager);
     $('.js-daily-double-popup').hide()
   }

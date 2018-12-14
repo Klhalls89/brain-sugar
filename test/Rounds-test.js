@@ -6,12 +6,12 @@ global.Clue = require('../lib/clue.js');
 global.DailyDouble = require('../lib/dailyDouble.js');
 global.data = require('../lib/jeopardy-dataset.js');
 const Round = require('../lib/rounds.js');
-chai.spy.on(global.domUpdates, ['updateCategories'], () => true);
 
 describe('Round', function() {
   var round;
   var roundProperties 
   beforeEach(function() {
+   chai.spy.on(global.domUpdates, ['updateCategories'], () => true);
    roundProperties = {
       clues: [{
         question: "Scorecard Report\" & \"Peter Jacobsen Plugged In\" are seen on the sports channel devoted to this",
@@ -28,7 +28,7 @@ describe('Round', function() {
     chai.spy.restore(global.domUpdates);
   });
 
-  it('should have a categories property which is an empty array', function() {
+  it('should have the appropriate default properties', function() {
     expect(round).to.have.property('categories').with.lengthOf(0); 
     expect(round).to.have.property('clues').with.lengthOf(1);
     expect(round.dailyDouble).to.equal(null);
@@ -60,6 +60,17 @@ describe('Round', function() {
   it('should be able to create a categories array', function() {
     round.createCategories();
     expect(round.categories).to.have.lengthOf(4);
-  })
+  });
+
+  it('should be creating the array of clues', function() {
+    round.createCategories();
+    round.createRoundClues(round.categories);
+    expect(round.clues).to.have.lengthOf(16);
+  });
+
+  it('should return mathing clue', function() {
+    let matchingClue = round.findMatchingClue(10, 100);
+    expect(matchingClue).to.be.a('object');
+  });
 
 });

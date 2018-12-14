@@ -5,6 +5,7 @@ chai.use(spies);
 global.Clue = require('../lib/clue.js');
 global.Game = require('../lib/game.js');
 global.Round = require('../lib/rounds.js');
+global.Player = require('../lib/player.js');
 const DailyDouble = require('../lib/dailyDouble.js');
 
 describe('DailyDouble', function() {
@@ -25,14 +26,17 @@ describe('DailyDouble', function() {
   beforeEach(function() {
     let round = new Round(roundProperties.categories, roundProperties.clues, roundProperties.dailyDouble);
     dailyDouble = new DailyDouble();
+    chai.spy.on(global.domUpdates, ['displayInvalidWagerMessage'], () => true);
   });
 
-  afterEach(function() {
-    chai.spy.restore(global.domUpdates);
+  afterEach(function(){
+    chai.spy.restore(global.domUpdates); 
   });
 
-  it.skip('should validate the users wager', function() {
-    let test = dailyDouble.validateWager(6);
+  it('should validate the users wager', function() {    
+    let players = [new Player(), new Player(), new Player()];
+    players[0].score = 7;
+    let test = dailyDouble.validateWager('6', new Game(players));
     expect(test).to.be.equal('valid wager');
   });
 });
