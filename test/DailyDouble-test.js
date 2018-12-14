@@ -11,25 +11,12 @@ const DailyDouble = require('../lib/dailyDouble.js');
 describe('DailyDouble', function() {
   var dailyDouble;
 
-  let roundProperties =
-    {
-      categories: [],
-      clues: [{
-        question: "Scorecard Report\" & \"Peter Jacobsen Plugged In\" are seen on the sports channel devoted to this",
-        pointValue: 100,
-        answer: "golf",
-        categoryId: 10
-        }],
-      dailyDouble: null
-    }
-
   beforeEach(function() {
-    let round = new Round(roundProperties.categories, roundProperties.clues, roundProperties.dailyDouble);
     dailyDouble = new DailyDouble();
     chai.spy.on(global.domUpdates, ['displayInvalidWagerMessage'], () => true);
   });
 
-  afterEach(function(){
+  afterEach(function() {
     chai.spy.restore(global.domUpdates); 
   });
 

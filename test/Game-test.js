@@ -26,7 +26,7 @@ describe('Game', function() {
     expect(game.currentPlayer).to.equal(0);
   });
 
-  it('should increment this.currentPlayer value when updatePlayerTurn is called', function() {
+  it('should increment this.currentPlayer value', function() {
     game.updatePlayerTurn()
     expect(game.currentPlayer).to.equal(1);
   });

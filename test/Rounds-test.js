@@ -11,14 +11,15 @@ describe('Round', function() {
   var round;
   var roundProperties 
   beforeEach(function() {
-   chai.spy.on(global.domUpdates, ['updateCategories'], () => true);
-   roundProperties = {
+    chai.spy.on(global.domUpdates, ['updateCategories'], () => true);
+    roundProperties = {
       clues: [{
-        question: "Scorecard Report\" & \"Peter Jacobsen Plugged In\" are seen on the sports channel devoted to this",
+        question: `Scorecard Report & Peter Jacobsen Plugged In are 
+                  seen on the sports channel devoted to this`,
         pointValue: 100,
         answer: "golf",
         categoryId: 10
-        }]
+      }]
     };
     round = new Round();
     round.clues = roundProperties.clues;
@@ -34,23 +35,24 @@ describe('Round', function() {
     expect(round.dailyDouble).to.equal(null);
   });
 
-  it('should create a dailyDouble question when assignDailyDouble is called', function() {
+  it('should create a dailyDouble question', function() {
     round.assignDailyDouble();
     expect(round.dailyDouble).is.instanceof(DailyDouble);
   });
 
   it('should remove a clue from the clues array', function() {
     let clue = {
-        question: "Scorecard Report\" & \"Peter Jacobsen Plugged In\" are seen on the sports channel devoted to this",
-        pointValue: 100,
-        answer: "golf",
-        categoryId: 10
-        };
+      question: `Scorecard Report & Peter Jacobsen Plugged In are 
+                  seen on the sports channel devoted to this`,
+      pointValue: 100,
+      answer: "golf",
+      categoryId: 10
+    };
     round.removeClue(clue);
     expect(round.clues).to.have.lengthOf(0);
   });
 
-  it('should be able to generate a number given a min and max range', function() {
+  it('should be able to generate a number given a min/max range', function() {
     let min = 5;
     let max = 45;
     let num = round.generateRandomNumber(min, max);
